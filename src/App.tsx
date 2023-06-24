@@ -1,5 +1,5 @@
 import React from 'react';
-import CharacterSelect from './CharacterSelect'
+import CharacterSelect from './components/CharacterSelect'
 
 
 function App() {
