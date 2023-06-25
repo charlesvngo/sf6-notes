@@ -1,11 +1,10 @@
 import React from "react";
-import { Divider, List, Typography } from "antd";
+import { Divider, List, Typography, Checkbox } from "antd";
+import type { CheckboxChangeEvent } from "antd/es/checkbox";
 
-// const data = [
-//   "Anti-air with cr.HP or FP DP",
-//   "Buffer Drive Rush with cr.MK",
-//   "React to counterhit cr.MP into cr.HP.",
-// ];
+const onChange = (e: CheckboxChangeEvent) => {
+  console.log(`checked = ${e.target.checked}`);
+};
 
 const data = [
   {
@@ -43,7 +42,7 @@ const GoalListItem = () => (
         <List.Item
           actions={item.tags}
           extra={[
-            <a key="goal-list-complete">complete </a>,
+            <Checkbox onChange={onChange} />,
             <a key="goal-list-favourite">favourite </a>,
             <a key="goal-list-edit">edit </a>,
             <a key="goal-list-delete">delete </a>,
