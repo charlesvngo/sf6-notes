@@ -5,6 +5,8 @@ import {
   EditOutlined,
   DeleteOutlined,
   StarFilled,
+  EditFilled,
+  DeleteFilled,
 } from "@ant-design/icons";
 import type { CheckboxChangeEvent } from "antd/es/checkbox";
 import IconItem from "./IconItem";
@@ -33,10 +35,6 @@ const data = [
   },
 ];
 
-// const IconItem = ({ icon }: { icon: React.FC }) => (
-//   <Space>{React.createElement(icon)}</Space>
-// );
-
 const GoalListItem = () => {
   const onChange = (e: CheckboxChangeEvent) => {
     console.log(`checked = ${e.target.checked}`);
@@ -55,8 +53,8 @@ const GoalListItem = () => {
             extra={[
               <Checkbox onChange={onChange} />,
               <IconItem icon={StarOutlined} iconHover={StarFilled} />,
-              <EditOutlined />,
-              <DeleteOutlined />,
+              <IconItem icon={EditOutlined} iconHover={EditFilled} />,
+              <IconItem icon={DeleteOutlined} iconHover={DeleteFilled} />,
             ]}
           >
             {item.description}

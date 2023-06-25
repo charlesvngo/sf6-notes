@@ -10,6 +10,13 @@ const IconItem = ({
   iconHover: React.FC;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  return <Space>{React.createElement(icon)}</Space>;
+  return (
+    <Space
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {React.createElement(isHovered ? iconHover : icon)}
+    </Space>
+  );
 };
 export default IconItem;
