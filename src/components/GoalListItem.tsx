@@ -1,6 +1,8 @@
 import React from "react";
 import { Divider, List, Typography, Checkbox } from "antd";
+import { StarOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import type { CheckboxChangeEvent } from "antd/es/checkbox";
+import Icon from "@ant-design/icons/lib/components/Icon";
 
 const onChange = (e: CheckboxChangeEvent) => {
   console.log(`checked = ${e.target.checked}`);
@@ -43,9 +45,9 @@ const GoalListItem = () => (
           actions={item.tags}
           extra={[
             <Checkbox onChange={onChange} />,
-            <a key="goal-list-favourite">favourite </a>,
-            <a key="goal-list-edit">edit </a>,
-            <a key="goal-list-delete">delete </a>,
+            <StarOutlined />,
+            <EditOutlined />,
+            <DeleteOutlined />,
           ]}
         >
           {item.description}
